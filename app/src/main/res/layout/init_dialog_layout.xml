@@ -5,6 +5,27 @@
     android:layout_height="match_parent"
     android:gravity = "center"
     android:background="@color/white">
+    <RadioGroup
+        android:id = "@+id/rdoGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:gravity = "center">
+        <RadioButton
+            android:id = "@+id/rdoFix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@string/str_radio_fix"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"/>
+        <RadioButton
+            android:id = "@+id/rdoVariable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@string/str_radio_variable"
+            android:textStyle="bold" />
+    </RadioGroup>
     <EditText
         android:id = "@+id/edt_inputCount"
         android:layout_width="300dp"
