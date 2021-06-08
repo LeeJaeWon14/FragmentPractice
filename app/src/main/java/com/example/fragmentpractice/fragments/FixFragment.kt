@@ -10,15 +10,15 @@ import androidx.fragment.app.Fragment
 import com.example.fragmentpractice.R
 import com.example.fragmentpractice.databinding.FragmentLayoutBinding
 
-class FirstFragment : Fragment() {
+class FixFragment : Fragment() {
     private var act : Context? = null
     private var _binding : FragmentLayoutBinding? = null
     private val binding
         get() = _binding!!
 
     companion object {
-        fun newInstance(page : Int) : FirstFragment {
-            val fragment = FirstFragment()
+        fun newInstance(page : Int) : FixFragment {
+            val fragment = FixFragment()
             val args = Bundle()
             args.putInt("page", page)
             fragment.arguments = args
@@ -46,7 +46,12 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.thumbnail.setImageResource(R.color.purple_500)
+
+        when(requireArguments().get("page")) {
+            0 -> { binding.thumbnail.setImageResource(R.drawable.photo1) }
+            1 -> { binding.thumbnail.setImageResource(R.drawable.photo2) }
+            2 -> { binding.thumbnail.setImageResource(R.drawable.photo3) }
+        }
     }
 
     override fun onDestroyView() {

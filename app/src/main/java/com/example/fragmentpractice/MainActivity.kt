@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity() {
             when(checkedId) {
                 R.id.rdoFix -> { inputMode = getString(R.string.str_radio_fix) }
                 R.id.rdoVariable -> { inputMode = getString(R.string.str_radio_variable) }
+                R.id.rdoAnim -> { inputMode = getString(R.string.str_radio_anim) }
             }
         }
 
@@ -102,6 +103,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 getString(R.string.str_radio_variable) -> {
                     variableInit()
+                }
+                getString(R.string.str_radio_anim) -> {
+                    binding.rvFragmentList.layoutManager = LinearLayoutManager(this@MainActivity)
+                    binding.rvFragmentList.adapter = MyRecyclerAdapter(1)
                 }
             }
             dlg.dismiss()

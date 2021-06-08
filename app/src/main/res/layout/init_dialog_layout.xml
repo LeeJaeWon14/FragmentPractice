@@ -24,6 +24,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text = "@string/str_radio_variable"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp" />
+        <RadioButton
+            android:id = "@+id/rdoAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@string/str_radio_anim"
             android:textStyle="bold" />
     </RadioGroup>
     <EditText
