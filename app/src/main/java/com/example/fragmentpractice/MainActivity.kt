@@ -1,23 +1,15 @@
 package com.example.fragmentpractice
 
-import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
-import android.util.Log
-import android.view.View
-import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fragmentpractice.adapter.MyRecyclerAdapter
 import com.example.fragmentpractice.databinding.ActivityMainBinding
 import com.example.fragmentpractice.databinding.InitDialogLayoutBinding
-import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     private var _binding : ActivityMainBinding? = null
@@ -114,6 +106,11 @@ class MainActivity : AppCompatActivity() {
 
         dlgView.btnExit.setOnClickListener {
             finishAffinity()
+        }
+
+        dlgView.btnExit.setOnLongClickListener {
+            startActivity(Intent(this, FragmentSampleActivity::class.java))
+            false
         }
 
         dlg.setCanceledOnTouchOutside(false)
